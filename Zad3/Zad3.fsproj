@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="p099_base_exp.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Content Include="p022_names.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Compile Include="Program.fs" />
   </ItemGroup>

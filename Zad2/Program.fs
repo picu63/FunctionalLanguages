@@ -1,24 +1,24 @@
 ﻿open System
+open System.IO
 
-let isBalanced str = 
-    let rec loop leftStr stack = 
-        match (leftStr, stack) with
-        | '(' :: frstSkipped,  stack         -> loop frstSkipped ('(' :: stack)
-        | ')' :: frstSkipped, '(' :: stack   -> loop frstSkipped stack
-        | ')' :: _, _               -> false
-        | _ :: frstSkipped, stack   -> loop frstSkipped stack
-        | [], []                    -> true
-        | [], _                     -> false
-    loop (Seq.toList str) []
+let allLinesFromFile path:string[] =
+    File.ReadAllLines(path)
+
+let largestExponential (numbersTuple:(int*float[])[]) = 
+    numbersTuple |> Array.map (fun t -> match t with | (i, arr) -> (i, arr.[1] * (log arr.[0])))
+    |> Array.maxBy (fun t -> match t with | (i, l) -> l)
+
+let getFloatsFromCsv (line:string) (charToSplit:char) =
+    line.Split(charToSplit) |> Array.map float
+
+let printFirstValueFromTuple tuple =
+   match tuple with
+    | (a, _) -> printfn "Linia numer: %A" a
 
 [<EntryPoint>]
 let main argv =
-    printfn "Rozwiązanie zadania nr 31:"
-    printfn "Test 1: \"()\" - %O" (isBalanced "()")
-    printfn "Test 2: \"()()()\" - %O" (isBalanced "()()()")
-    printfn "Test 3: \"((()))\" - %O" (isBalanced "((()))")
-    printfn "Test 4: \"()((())())\" - %O" (isBalanced "()((())())")
-    printfn "Podany argument \"%O\"" argv.[0]
-    let isBalancedGiven = isBalanced argv.[0]
-    printfn "Czy jest poprawny?: %O" isBalancedGiven
-    0
+    let readFileLines = allLinesFromFile "p099_base_exp.txt"
+    let linesDeconstructedToCalculate = readFileLines |> Array.mapi (fun i l -> (i + 1, getFloatsFromCsv l ','))
+    let largest = largestExponential linesDeconstructedToCalculate
+    printFirstValueFromTuple largest
+    0 // return an integer exit code
