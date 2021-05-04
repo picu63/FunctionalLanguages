@@ -1,24 +1,19 @@
 ﻿open System
 
-let isBalanced str = 
-    let rec loop leftStr stack = 
-        match (leftStr, stack) with
-        | '(' :: frstSkipped,  stack         -> loop frstSkipped ('(' :: stack)
-        | ')' :: frstSkipped, '(' :: stack   -> loop frstSkipped stack
-        | ')' :: _, _               -> false
-        | _ :: frstSkipped, stack   -> loop frstSkipped stack
-        | [], []                    -> true
-        | [], _                     -> false
-    loop (Seq.toList str) []
+let hasTheSameChars (s1:string) (s2:string) =
+    s1 |> Seq.forall (fun c -> s2.IndexOf(c) >= 0)
+
+let checkNumbersOfMultiply (number : int) (multiplier : int) =
+    let numberStr = number.ToString()
+    let multipleStr = (number * multiplier).ToString()
+    multipleStr.Length = numberStr.Length && hasTheSameChars numberStr multipleStr
+
+let correctMultiply number =
+    {2..6} |> Seq.forall (fun multiplier -> checkNumbersOfMultiply number multiplier)
 
 [<EntryPoint>]
 let main argv =
-    printfn "Rozwiązanie zadania nr 31:"
-    printfn "Test 1: \"()\" - %O" (isBalanced "()")
-    printfn "Test 2: \"()()()\" - %O" (isBalanced "()()()")
-    printfn "Test 3: \"((()))\" - %O" (isBalanced "((()))")
-    printfn "Test 4: \"()((())())\" - %O" (isBalanced "()((())())")
-    printfn "Podany argument \"%O\"" argv.[0]
-    let isBalancedGiven = isBalanced argv.[0]
-    printfn "Czy jest poprawny?: %O" isBalancedGiven
+    {1..Int32.MaxValue} // listy działają zbyt długo
+        |> Seq.find correctMultiply 
+        |> fun i -> printf "%i" i
     0

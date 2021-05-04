@@ -7,11 +7,13 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Zad1", "Zad1\Zad1.fsproj", 
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "LearningFSharpTutorialYT", "LearningFSharpTutorialYT\LearningFSharpTutorialYT.fsproj", "{0CCAF9B3-F5CC-4344-998E-362E873FD5DF}"
 EndProject
-Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Zad4", "Zad4\Zad4.fsproj", "{5F3EAED5-7B7C-4334-BFAB-2A5455B9B744}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Zad4ParseryNa6wykladzie", "Zad4later\Zad4ParseryNa6wykladzie.fsproj", "{5F3EAED5-7B7C-4334-BFAB-2A5455B9B744}"
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Zad2", "Zad2\Zad2.fsproj", "{501734C5-7743-43E6-B752-E4440DDA1E24}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Zad3", "Zad3\Zad3.fsproj", "{E55C5469-A5E4-4622-A631-04EBEDC30BAE}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Zad3", "Zad3\Zad3.fsproj", "{E55C5469-A5E4-4622-A631-04EBEDC30BAE}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Zad4", "Zad4\Zad4.fsproj", "{92FF7715-3B50-43C3-AFC2-3B7FB3824EEA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{E55C5469-A5E4-4622-A631-04EBEDC30BAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E55C5469-A5E4-4622-A631-04EBEDC30BAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E55C5469-A5E4-4622-A631-04EBEDC30BAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92FF7715-3B50-43C3-AFC2-3B7FB3824EEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92FF7715-3B50-43C3-AFC2-3B7FB3824EEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92FF7715-3B50-43C3-AFC2-3B7FB3824EEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92FF7715-3B50-43C3-AFC2-3B7FB3824EEA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
